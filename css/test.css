@@ -1,4 +1,4 @@
-@charset "utf-8";
++@charset "utf-8";
 @import url("font.css");
 * {
   margin: 0;
@@ -32,31 +32,15 @@ body {
 .inner {
   display: block;
   position: relative;
-  max-width: 1280px;
+  width: 1280px;
+  width: 128rem;
   margin: 0 auto;
 }
-@media screen and (max-width: 1280px) {
-  .inner {
-    max-width: 1024px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .inner {
-    max-width: 760px;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .inner {
-    max-width: 100%;
-  }
-}
-
 /* float 해제 */
 .clearfix::after {
-  display: block;
-  position: relative;
   content: "";
+  position: relative;
+  display: block;
   width: 100%;
   clear: both;
 }
@@ -157,15 +141,14 @@ body {
   font-weight: 700;
 }
 .bt-link-shop::after {
-  display: inline-block;
-  position: relative;
   content: "";
+  position: relative;
+  display: inline-block;
   margin-left: 3px;
   width: 7px;
   height: 11px;
   background: url("../images/icon_linkArrow.svg") no-repeat center;
 }
-
 /* 플라잉 배너 */
 .fix-banner {
   position: fixed;
@@ -182,18 +165,20 @@ body {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: #fff url("../images/btn_topArrow.svg") no-repeat center;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background: url("../images/btn_topArrow.svg") no-repeat center;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.16);
   font-size: 0;
   margin-top: 10px;
 }
-
+version
 /* 기본레이아웃 */
 .wrap {
 }
 /* 상단 */
 .header {
+  position: relative;
   z-index: 999999;
   /* border-bottom: 1px solid #ebebeb; */
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -278,7 +263,6 @@ body {
 }
 
 .header-right {
-  position: relative;
   float: right;
 }
 .member-list {
@@ -306,7 +290,7 @@ body {
   content: "";
   width: 8px;
   height: 5px;
-  background: url("../images/arrow_pc.svg") no-repeat center;
+  background: url("../images/icon_arrow.svg") no-repeat center;
   vertical-align: 3px;
   margin-left: 5px;
 }
@@ -347,16 +331,9 @@ body {
   font-weight: 500;
 }
 
-.mb-mypage {
-  position: absolute;
-  right: 10px;
-  top: -5px;
-  display: none;
-}
-
 .header-down {
-}
 
+}
 .service-list {
   display: block;
   float: left;
@@ -409,68 +386,6 @@ body {
   width: 1px;
   height: 16px;
   background: rgba(0, 0, 0, 0.2);
-}
-
-@media screen and (max-width: 1024px) {
-  .header {
-    border-bottom: 8px solid #f0f4f4;
-  }
-  .header .inner {
-    padding-top: 15px;
-    height: 230px;
-  }
-  .logo {
-    width: 77px;
-    height: 18px;
-    margin-left: 15px;
-  }
-
-  .header-left {
-    width: 100%;
-  }
-  .search {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 140px;
-  }
-
-  .member-list {
-    display: none;
-  }
-  .mb-mypage {
-    display: block;
-  }
-
-  .header-down {
-    text-align: center;
-  }
-  .service-list {
-    display: inline-block;
-    float: none;
-    margin-top: 0px;
-  }
-
-  .service-list li {
-    padding-right: 20px;
-  }
-  .service-list li:last-child {
-    margin-right: 0px;
-  }
-
-  .service-list li a {
-    font-size: 12px;
-    font-weight: 400;
-  }
-  .service-list li a img {
-    display: block;
-    width: 48px;
-    height: 48px;
-    margin: 0 auto;
-  }
-
-  .service-menu {
-    display: none;
-  }
 }
 
 /* 추천이벤트 */
@@ -546,8 +461,6 @@ body {
   color: #ef3e43;
 }
 .good-info-list li p {
-  /* 3. display: -webkit-box */
-  display: -webkit-box;
   font-size: 15px;
   line-height: 18px;
   color: #111;
@@ -561,6 +474,8 @@ body {
   height: 36px;
   /* 2. 넘치는 영역을 가린다. */
   overflow: hidden;
+  /* 3. display: -webkit-box */
+  display: -webkit-box;
   /* 4. text-overflow: elipsis */
   text-overflow: ellipsis;
   /* 5. 아래 코드를 입력한다. */
@@ -596,8 +511,8 @@ body {
 .tour-img img {
   /* absolute 를 영역 중앙에 배치 */
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   /* 좌표, 영역말고 내용 즉, 보이는 부분만 이동 */
   transform: translate(-50%, -50%);
 
@@ -616,10 +531,11 @@ body {
 }
 
 .tour-cate {
-  display: inline-block;
   position: absolute;
-  top: -39px;
   left: 0;
+  top: -39px;
+
+  display: inline-block;
   background: #4a95ff;
   font-size: 14px;
   line-height: 32px;
@@ -629,10 +545,10 @@ body {
   border-radius: 3px;
 }
 .tour-title {
-  display: block;
   font-size: 15px;
   line-height: 18px;
   color: #4a95ff;
+  display: block;
   /* 1줄 말줄임 ...  */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -683,26 +599,26 @@ body {
 
 .ticket-img img {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 
   width: 100%;
 }
 .ticket-rank {
   position: absolute;
-  bottom: 30px;
   left: 25px;
+  bottom: 30px;
   font-size: 70px;
   color: #fff;
   font-weight: 700;
   z-index: 1;
 }
 .ticket-img::after {
-  position: absolute;
-  top: 0;
-  left: 0;
   content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)),
@@ -722,12 +638,12 @@ body {
   margin-bottom: 0px;
 }
 .ticket-title {
-  /* 2줄 ... 처리 */
-  display: -webkit-box;
   color: #111;
   font-size: 18px;
   line-height: 22px;
   font-weight: 700;
+  /* 2줄 ... 처리 */
+  display: -webkit-box;
   height: 44px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -777,8 +693,8 @@ body {
   height: 100%;
 }
 .live-link {
-  display: block;
   position: relative;
+  display: block;
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -789,21 +705,21 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  background: pink;
+  /* background: pink; */
 }
 .live-img img {
   /* 이미지 너비, 높이 상관없이 가운데 */
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 
   height: 100%;
 }
 .live-info {
   position: absolute;
-  top: 0;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
@@ -824,11 +740,11 @@ body {
 }
 
 .live-info-title {
-  display: -webkit-box;
   font-size: 20px;
   line-height: 24px;
   /* 2줄 말줄임 출력 */
   height: 48px;
+  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
@@ -840,8 +756,8 @@ body {
 
 .live-info-main {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 
   width: 100%;
@@ -863,8 +779,8 @@ body {
 
 .live-info-bottom {
   position: absolute;
-  bottom: 20px;
   left: 0;
+  bottom: 20px;
   width: 100%;
   padding: 0 20px;
 }
@@ -876,12 +792,12 @@ body {
   height: 65px;
   border-radius: 3px;
   overflow: hidden;
-  background: pink;
+  /* background: pink; */
 }
 .live-info-thumb img {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   height: 100%;
 }
@@ -947,8 +863,8 @@ body {
 }
 .books-img img {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
 }
@@ -1002,8 +918,8 @@ body {
 }
 .events-link img {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   mix-blend-mode: multiply;
@@ -1027,10 +943,10 @@ body {
   position: relative;
 }
 .footer-menu-list > li::after {
-  position: absolute;
-  top: 2px;
-  right: -36px;
   content: "";
+  position: absolute;
+  right: -36px;
+  top: 2px;
   width: 1px;
   height: 12px;
   background: rgba(0, 0, 0, 0.3);
@@ -1049,9 +965,9 @@ body {
   font-weight: 700;
 }
 .footer-menu-list > li > a > i::before {
-  display: inline-block;
-  position: relative;
   content: "";
+  position: relative;
+  display: inline-block;
   width: 8px;
   height: 6px;
   background: url("../images/icon_arrow.svg") no-repeat center;
@@ -1066,8 +982,8 @@ body {
 .more-list {
   display: none;
   position: absolute;
-  top: 20px;
   right: 0;
+  top: 20px;
   padding: 17px;
   background: #fff;
   box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2);
@@ -1127,9 +1043,9 @@ body {
 .company-info li span {
 }
 .company-info li span.f-line::after {
-  display: inline-block;
-  position: relative;
   content: "";
+  position: relative;
+  display: inline-block;
   width: 1px;
   height: 10px;
   background: #b2b2b2;
