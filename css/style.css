@@ -540,7 +540,7 @@ body {
   .promotion {
   }
   .promotion .inner {
-    height: 200px;
+    /* height: 200px; */
     border-bottom: 8px solid #f0f4f4;
   }
   .promotion .section-top {
@@ -553,7 +553,7 @@ body {
 }
 @media screen and (max-width: 760px) {
   .promotion .inner {
-    height: 190px;
+    /* height: 190px; */
   }
   .sw-promotion {
     width: 50%;
